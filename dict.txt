@@ -1,3 +1,4 @@
+filename,fall_back.png,size,100332,url,https://imgs.xkcd.com/comics/fall_back.png
 filename,xkcd_phone_12.png,size,204370,url,https://imgs.xkcd.com/comics/xkcd_phone_12.png
 filename,curbside.png,size,116377,url,https://imgs.xkcd.com/comics/curbside.png
 filename,worst_ladder.png,size,79415,url,https://imgs.xkcd.com/comics/worst_ladder.png
@@ -1033,7 +1034,7 @@ filename,when_you_assume.png,size,15326,url,https://imgs.xkcd.com/comics/when_yo
 filename,land_mammals.png,size,34277,url,https://imgs.xkcd.com/comics/land_mammals.png
 filename,hack.png,size,286660,url,https://imgs.xkcd.com/comics/hack.png
 filename,transformers.png,size,43945,url,https://imgs.xkcd.com/comics/transformers.png
-filename,now.png,size,267840,url,https://imgs.xkcd.com/comics/now.png
+filename,now.png,size,267868,url,https://imgs.xkcd.com/comics/now.png
 filename,second.png,size,27783,url,https://imgs.xkcd.com/comics/second.png
 filename,first_date.png,size,48034,url,https://imgs.xkcd.com/comics/first_date.png
 filename,slippery_slope.png,size,16069,url,https://imgs.xkcd.com/comics/slippery_slope.png
@@ -1178,7 +1179,7 @@ filename,stratigraphic_record.png,size,65103,url,https://imgs.xkcd.com/comics/st
 filename,externalities.png,size,227,url,https://imgs.xkcd.com/comics/externalities.png
 filename,humming.png,size,34457,url,https://imgs.xkcd.com/comics/humming.png
 filename,the_past.png,size,12649,url,https://imgs.xkcd.com/comics/the_past.png
-filename,time.png,size,27143,url,https://imgs.xkcd.com/comics/time.png
+filename,time.png,size,27184,url,https://imgs.xkcd.com/comics/time.png
 filename,voyager_1.png,size,7523,url,https://imgs.xkcd.com/comics/voyager_1.png
 filename,bonding.png,size,20033,url,https://imgs.xkcd.com/comics/bonding.png
 filename,aspect_ratio.png,size,14253,url,https://imgs.xkcd.com/comics/aspect_ratio.png
