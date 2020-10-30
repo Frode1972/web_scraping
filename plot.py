@@ -1,4 +1,3 @@
-from random import randint
 from timeit import repeat
 import matplotlib.pyplot as plt
 from sort_lib import bubble_sort, quicksort, insertion_sort
@@ -6,7 +5,8 @@ from txt_files import load_dict_from_file
 
 
 def graf(x_numbers, y1_times, y2_times, y3_times):
-    '''Imports 4 lists, x_numbers is the numbers on x axis. Then lists of 3 different time measurements
+    '''Imports 4 lists, x_numbers is the numbers on x axis. 
+    Then lists of 3 different time measurements
     from the sorting algorithms '''
     plt.autoscale(True)
     plt.plot(x_numbers, y1_times, 'r', label="Insertion sort")
@@ -27,8 +27,8 @@ def run_sorting_algorithm(algorithm, array):
     # in seconds that each execution took
     rep = 10  # repetitions
     times = repeat(setup=setup_code, stmt=stmt, repeat=3, number=rep)
-    # Store the times in a list. 
-    y_times.append(min(times)/rep) 
+    # Store the times in a list.
+    y_times.append(min(times)/rep)
     # Display the name of the algorithm and the
     # minimum time it took to run
     print(f"Algorithm: {algorithm}. Minimum execution time: {min(times)/rep}")
@@ -37,7 +37,7 @@ def run_sorting_algorithm(algorithm, array):
 def init(array, i):
     '''Call the function using the name of the sorting algorithm
         and the array created. The array is the range of numbers to be tested'''
-    if __name__ == "__main__":       
+    if __name__ == "__main__":
         if i == 0:
             run_sorting_algorithm(algorithm="insertion_sort", array=array)
         elif i == 1:
@@ -45,7 +45,8 @@ def init(array, i):
         elif i == 2:
             run_sorting_algorithm(algorithm="bubble_sort", array=array)
 
-L=[]
+
+L = []
 # List of measured times
 y_times = []
 # Numbers on x-axis
@@ -55,7 +56,8 @@ x_numbers = [int(x) for x in range(100, 2301, 200)]
 try:
     L = load_dict_from_file()
 except FileNotFoundError:
-    print("\nThe file unsorted.txt do not exist. You have to run web_scraping first to make a list of unsorted image file size numbers.")
+    print("\nThe file unsorted.txt do not exist.")
+    print("You have to run web_scraping first to make a list of unsorted image file size numbers.")
     print("Instead a list of type int(x) for x in range(1,2301,1) will be made and sorted")
     input("press enter to continue")
     serie = [int(x) for x in range(1, 2301, 1)]

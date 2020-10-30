@@ -1,4 +1,3 @@
-import timeit
 from random import randint
 
 
@@ -17,13 +16,14 @@ def insertion_sort(L):
     '''Insertion sort'''
     for i in range(1, len(L)):
         item_to_insert = (L[i])
-        #print(item_to_insert)
+        # print(item_to_insert)
         j = i-1
         while j >= 0 and L[j]["size"] < item_to_insert["size"]:
             L[j+1] = L[j]
             j -= 1
         L[j+1] = item_to_insert
     return L
+
 
 def quicksort(array):
     '''Quicksort'''
