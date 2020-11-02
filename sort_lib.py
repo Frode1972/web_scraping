@@ -2,7 +2,11 @@ from random import randint
 
 
 def bubble_sort(alist):
-    '''Bubblesort'''
+    '''Bubble sort has two for loops and a complexity of n^2. 
+    The n is the number of items being sorted. 
+    It starts from the end and repeatedly compare each pair of 
+    adjacent values and swap them if they are not in descending order. 
+    It keeps doing this until there are no more values to swap.'''
     for passnum in range(len(alist)-1, 0, -1):
         for i in range(passnum):
             if alist[i]["size"] < alist[i+1]["size"]:
@@ -13,10 +17,12 @@ def bubble_sort(alist):
 
 
 def insertion_sort(L):
-    '''Insertion sort'''
+    '''Insertion sort has a for loop and while loop and is also an n^2 sorting algorithm, 
+    but it is more effective than the bubble sort. 
+    It starts sorting from a end and then split the list in an sorted and unsorted part, 
+    the values are taken from the unsorted part and placed correctly in the sorted part.'''
     for i in range(1, len(L)):
         item_to_insert = (L[i])
-        # print(item_to_insert)
         j = i-1
         while j >= 0 and L[j]["size"] < item_to_insert["size"]:
             L[j+1] = L[j]
@@ -26,11 +32,12 @@ def insertion_sort(L):
 
 
 def quicksort(array):
-    '''Quicksort'''
+    '''Quick sort has an average performance of n*log(n) and is more 
+    effective than the bubble sort and the insertion sort.'''
     if len(array) < 1:
         return array
     low, same, high = [], [], []
-    # Select your `pivot` element randomly
+    # Select `pivot` element randomly
     pivot = array[randint(0, len(array) - 1)]
     for item in array:
         # Elements that are smaller than the `pivot` go to

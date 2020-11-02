@@ -25,7 +25,7 @@ def run_sorting_algorithm(algorithm, array):
     stmt = f"{algorithm}({array})"
     # Execute the code 10 different times and return the time
     # in seconds that each execution took
-    rep = 10  # repetitions
+    rep = 10  # numbers of repetitions
     times = repeat(setup=setup_code, stmt=stmt, repeat=3, number=rep)
     # Store the times in a list.
     y_times.append(min(times)/rep)
