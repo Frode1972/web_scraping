@@ -25,9 +25,9 @@ def run_sorting_algorithm(algorithm, array):
     stmt = f"{algorithm}({array})"
     # Execute the code 10 different times and return the time
     # in seconds that each execution took
-    rep = 10  # numbers of repetitions
+    rep = 10  # numbers of repetitions, you can easily change numbers of repetition.  
     times = repeat(setup=setup_code, stmt=stmt, repeat=3, number=rep)
-    # Store the times in a list.
+    # Store the minimum times used in a list.
     y_times.append(min(times)/rep)
     # Display the name of the algorithm and the
     # minimum time it took to run
@@ -47,12 +47,12 @@ def init(array, i):
 
 
 L = []
-# List of measured times
+# List of measured times on y-axis
 y_times = []
 # Numbers on x-axis
 x_numbers = [int(x) for x in range(100, 2301, 200)]
 
-# unsorted img size list from xkcd.com made in web_scraping.py
+# Unsorted img size list from xkcd.com made in web_scraping.py
 try:
     L = load_dict_from_file()
 except FileNotFoundError:
@@ -75,11 +75,12 @@ for i in range(sorting_methods):
     for x_number in x_numbers:
         array_length = []
         array_length = L[:x_number]  # Extract the number of sizes to be sorted.
-        init(array_length, i)  # Call the init function.
+        init(array_length, i)  # Call the init function to start time measuring.
     if i == 0:
         y1_times = y_times
     elif i == 1:
         y2_times = y_times
     elif i == 2:
         y3_times = y_times
-graf(x_numbers, y1_times, y2_times, y3_times)
+#  Send the measured times to graf and plot the results.
+graf(x_numbers, y1_times, y2_times, y3_times) 

@@ -30,10 +30,10 @@ def check_dict():
 
 def anim_gif(img_name):
     '''The function shows the animation .gif'''
-    img = Image.open(img_name)
-    img.seek(1)
-    count = 0
     try:
+        img = Image.open(img_name)
+        img.seek(1)
+        count = 0
         while count < 271:
             img.seek(img.tell() + 1)
             img.show()
@@ -56,9 +56,9 @@ img_liste = []
 liste_innhold = {}
 count = 0
 
-exist_dict = check_dict()
 # Check if the dict.txt exist and if it has over 2300 lines,
-# if it is fase the program read the web page.
+# if it is false the program read the web page.
+exist_dict = check_dict()
 if exist_dict is False:
     while not url.endswith('#'):
         # Find the URL of the comic image.
@@ -91,7 +91,7 @@ else:
     # so we don't need to start downloading again.
     img_liste = load_dict_from_file()
 
-# Use quicksort for sorting the img_list
+# Use quicksort for sorting the img_list, the most effective from plot.
 sorting = quicksort(img_liste)
 
 # Pick out the top ten sizes.
@@ -103,8 +103,8 @@ cont = True
 while cont:
     clear()
     print(f"Top {top_index} results:\n")
-    for x, y in enumerate(top_x, 1):
-        print(f"Number {x:<6} with filename: {y['filename']:<35} and with size {y['size']:<10} byte")
+    for x, img in enumerate(top_x, 1):
+        print(f"Number {x:<6} with filename: {img['filename']:<35} and with size {img['size']:<10} byte")
     print(f"\nWrite '-1' to end the program")
     print("-----------------------------------------------------------------------------------------------")
     select = input("Select one of the numbers to open the image or write '-1' to end the program:")  # Select image
@@ -115,7 +115,6 @@ while cont:
     select = int(select)
     for index, content in enumerate(top_x, 1):
         if select == index:
-            url_img = (content['url'])
             img_name = ("./xkcd/"+content['filename'])
             exist_img = os.path.isfile(img_name)
             # Check if image already exist in folder, then it will be opened.
@@ -127,6 +126,7 @@ while cont:
             # The image will be downloaded to /xkcd if it is not in folder.
             else:
                 try:
+                    url_img = (content['url'])
                     res = requests.get(url_img)
                     res.raise_for_status()
                     imageFile = open(os.path.join('xkcd', os.path.basename(url_img)), 'wb')
